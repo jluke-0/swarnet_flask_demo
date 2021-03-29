@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block title %}Topics{% endblock %}
+{% block page %}Topics{% endblock %}
+
+{{ super() }}
+
+{% block content %}
+    <div main class="row">
+      <table>
+        <thead>
+          <tr>
+           <th>Topic Name</th><th>Message</th><th>Created By</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for topic in topic %}
+            <tr>
+                <td>{{topic.topicName}}</td>
+                <td>{{topic.topicMessage}}</td>
+                <td>{{topic.topicCreator}}</td>
+            </tr>
+          {% endfor %}
+        <tbody>
+      </table>
+    </div>
+{% endblock %}

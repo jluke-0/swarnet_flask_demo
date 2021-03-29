@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block title %}Home{% endblock %}
+{% block page %}Home{% endblock %}
+
+{{ super() }}
+
+{% block content %}
+    <div main class="row">
+      <h1>Create a topic {{user.username}}</h1>
+        
+  <section class="container">
+  <form id="insert" method="POST" action="/created/{{user.id}}">
+            <div class="row">
+        <div class="input-field col s12">
+          <textarea name="topic" id="topic" class="materialize-textarea"></textarea>
+          <label for="topic">Topic</label>
+        </div>
+              </div>
+
+      
+
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea name="message" id="message" class="materialize-textarea"></textarea>
+          <label for="message">Message</label>
+        </div>
+      </div>
+    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button> 
+       </section>
+  </form>
+
+  <br><br>
+  <table>
+        <thead>
+          <tr>
+           <th>Topic</th><th>Subscribe</th><th>Unsubscribe</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for topic in topic %}
+            <tr>
+                <td>{{topic.topicName}}</td>
+                
+                <form id="sub" method="POST" action="/sub/{{topic.topicName}}/{{user.id}}">
+                <div class="row">
+                <td><input type="submit" name="subscribe" value="subscribe"></td>
+                </div>
+                </form>
+                <form id="sub" method="POST" action="/unsub/{{topic.topicName}}/{{user.id}}">
+                <div class="row">
+                <td><input type="submit" name="unsubscribe" value="unsubscribe"></td>
+                </div>
+                </form>
+          {% endfor %}
+        <tbody>
+      </table>
+     
+    </div>
+{% endblock %}

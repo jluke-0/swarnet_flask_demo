@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block title %}Duplicate Topic{% endblock %}
+{% block page %}Duplicate Topic{% endblock %}
+
+{{ super() }}
+
+{% block content %}
+    <div main class="row">
+      <button onclick="goBack()">Go Back</button>
+    </div>
+    <script>
+function goBack() {
+  window.history.back();
+}
+</script>
+{% endblock %}

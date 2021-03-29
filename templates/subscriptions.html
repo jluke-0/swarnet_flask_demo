@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block title %}Subscriptions{% endblock %}
+{% block page %}Subscriptions{% endblock %}
+
+{{ super() }}
+
+{% block content %}
+    <div main class="row">
+      <table>
+        <thead>
+          <tr>
+           <th>Topic</th><th>Subscriber</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for sub in sub %}
+            <tr>
+                <td>{{sub.sub_topic}}</td>
+                <td>{{sub.sub_user}}</td>
+            </tr>
+          {% endfor %}
+        <tbody>
+      </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block title %}Generated Users{% endblock %}
+{% block page %}Generated Users{% endblock %}
+
+{{ super() }}
+
+{% block content %}
+    <div main class="row">
+      <h1>Generated Users!</h1>
+      <input type="button" onclick="location.href='users';" value="Go to Users" />
+    </div>
+{% endblock %}
