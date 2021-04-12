@@ -6,8 +6,13 @@ In repl use:  python3 main.py
 
 
 pip install flask-wtf
+
 pip install sqlalhemy
+
 pip install werkzeug
+
 pip install wtforms
+
 pip install flask-jwt
+
 pip flask-sqlalchemy
