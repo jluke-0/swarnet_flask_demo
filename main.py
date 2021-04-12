@@ -33,6 +33,7 @@ jwt = JWT(app, authenticate, identity)
 
 ''' End JWT Setup '''
 
+#######JINJA TEMPLATES FOR DEMO#######
 @app.route('/')
 def make_users():
   db.create_all(app=app)
@@ -128,6 +129,36 @@ def unsub(id,topicName):
     db.session.delete(unsub)
     db.session.commit()
     return render_template('unsub.html')
+
+#######REST API / HEADLESS WITH NO UI#######
+@app.route('/api/topics')
+def api_topics():
+  topic=Topics.query.all()
+  topic=[topic.toDict() for topic in topic]
+  return json.dumps(topic)
+
+@app.route('/api/users')
+def api_users():
+  users=User.query.all()
+  users=[users.toDict() for users in users]
+  return json.dumps(users)
+
+@app.route('/api/subscriptions')
+def api_subs():
+  sub=Sub.query.all()
+  sub=[sub.toDict()for sub in sub]
+  return json.dumps(sub)
+
+@app.route('/api')
+def api():
+  topic=Topics.query.all()
+  topic=[topic.toDict() for topic in topic] 
+  users=User.query.all()
+  users=[users.toDict() for users in users]
+  sub=Sub.query.all()
+  sub=[sub.toDict()for sub in sub]
+  all = [sub, topic,users]
+  return json.dumps(all)
 
 
 

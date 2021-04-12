@@ -68,8 +68,8 @@ class Sub(db.Model):
 
   def toDict(self):
     return{
-      'sub_id':self.id,
-      'sub_topic':self.topic,
-      'sub_user':self.user,
+      'sub_id':self.sub_id,
+      'sub_topic':self.sub_topic,
+      'sub_user':self.sub_user,
       'randomcheck':self.randomcheck
     }
