@@ -16,3 +16,7 @@ pip install wtforms
 pip install flask-jwt
 
 pip flask-sqlalchemy
+
+pip install flask_cors
+
+pip install pycryptodome
