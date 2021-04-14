@@ -1,7 +1,8 @@
 # swarnet_flask_demo
 Demo using flask for SWARNET. Includes simple jinja templating.
 
-Running the application
+Running the application:
+*pip install pycryptodome before* 
 In repl use:  python3 main.py
 
 *Delete test.db before starting*
