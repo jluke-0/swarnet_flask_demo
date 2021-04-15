@@ -88,9 +88,9 @@ class CryptoService:
         print(type(privateCipher))
         message = privateCipher.decrypt(encryptedData)
 
-        print('this is the decrypted messaage', message.decode())
+        print('this is the decrypted message', message.decode())
 
-        return message
+        return message.decode()
 
     def readClientData(self, text):
         # reads the message from the client in the text file
